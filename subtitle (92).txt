@@ -1,0 +1,49 @@
+In this video, we will introduce you to the
+Model Asset eXchange on IBM Developer, a free open source resource for deep learning models. Throughout the video we will refer to the
+Model Asset eXchange as "MAX." In the previous video, we briefly outlined
+the high-level tasks you need to complete to train a model from scratch. Due to the amount of data, labor, time, and
+resources required to complete the tasks, time to value can be quite long. To reduce time to value, consider taking advantage
+of pre-trained models for certain types of problems. These pre-trained models can be ready to use
+right away, or they might take less time to train. The Model Asset eXchange is a free open source
+repository for ready-to-use and customizable deep learning microservices. These microservices are configured to use
+pre-trained or custom-trainable state-of-the-art deep learning models to solve common business
+problems. These models have been reviewed, tested, and
+can be quickly deployed in local and cloud environments. All models in MAX are available under permissive
+open source licenses, making it easier to use them for personal and commercial purposes
+and reducing the risk of legal liabilities. On MAX, you can find models for a variety
+of domains, including image, audio, video, and natural language analysis. This list includes a small selection. In the lab for this module, you’ll have
+a chance to explore those models. Let’s take a look at the components of a
+typical model-serving microservice. Each microservice includes the following components: A pre-trained deep learning model. Code that pre-processes the input before it
+is analyzed by the model and code that post-processes the model output. A standardized public API that makes the services’
+functionality available to applications. The MAX model-serving microservices are built
+and distributed as open-source Docker images. Docker is a container platform that makes
+it easy to build applications and to deploy them in a development, test, or production
+environment. The Docker image source is published on GitHub
+and can be downloaded, customized as needed, and used in personal or commercial environments. You can deploy and run these images in a test
+or production environment using Kubernetes, an open-source system for automating deployment,
+scaling, and management of containerized applications in private, hybrid, or public clouds. A popular enterprise-grade Kubernetes platform
+is Red Hat OpenShift, which is available on IBM Cloud, Google Cloud Platform, Amazon Web
+Services, and Microsoft Azure. The model-serving microservices expose a REST
+API that developers can use to incorporate deep learning into their applications and
+services. Because REST APIs can be consumed using any
+programming language, you can easily integrate these services into your existing ecosystem. The API exposes a prediction endpoint and
+one or more metadata endpoints. This example shows the endpoints for the Object
+Detection microservice. The /model/predict endpoint takes an image
+as input and returns as a response a list of objects that were detected in the image,
+along with bounding box coordinates that identify where the detected object is located. Some prediction endpoints can also accept
+additional input parameters that impact the produced results, such as filters. This microservice exposes two metadata endpoints,
+/model/labels and /model/metadata. These endpoints provide information such as
+the objects that can be detected and the deep learning model used to derive the answer given
+the input. In the lab portion of this module, you will
+have a chance to explore and test these endpoints using a web browser. Each endpoint accepts application-friendly
+inputs, such as an image in JPG, PNG, or GIF format, instead of a model-specific data structure. Each endpoint also generates application-friendly
+outputs, such as standardized JSON, which is a lightweight data-interchange format. Let’s take a closer look at what happens
+when an application invokes the prediction endpoint. In this example, a user has selected an image
+in a web application, the prediction endpoint is invoked, and the image is uploaded. The microservice prepares the input image
+for processing, runs the deep learning model that identifies objects in the image, generates
+a response using the prediction results, and returns the result to the application. The application renders the results by drawing
+bounding boxes and labels. In this video, we’ve introduced the Model
+Asset eXchange, a free and open source repository for microservices that make deep learning
+functionality available to applications and services in local and cloud environments. In the lab, you will have a chance to try
+a model-serving microservice, explore its API, and learn more about how you can leverage
+it from a web application and an Internet of Things application.
